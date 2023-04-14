@@ -19,6 +19,6 @@ func Login(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, model.Response{
-		"success", loginRequest,
+		"login success", loginRequest,
 	})
 }
