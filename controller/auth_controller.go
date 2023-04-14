@@ -8,12 +8,17 @@ import (
 )
 
 func Login(c echo.Context) error {
-	// email := c.FormValue("email")
-	// password := c.FormValue("password")
+
 	var loginRequest model.LoginRequest
 	c.Bind(&loginRequest)
 
+	if loginRequest.Username == "" || loginRequest.Password == "" {
+		return c.JSON(http.StatusBadRequest, model.Response{
+			"error", "Username or password is empty",
+		})
+	}
+
 	return c.JSON(http.StatusOK, model.Response{
-		"sucess", loginRequest,
+		"success", loginRequest,
 	})
 }
