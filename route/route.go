@@ -8,10 +8,10 @@ import (
 
 func InitRoute() *echo.Echo {
 	e := echo.New()
-	e.POST("/student", controller.AddStudents)
-	e.GET("/student", controller.GetStudent)
-	e.GET("/student/:id", controller.GetDetailStudent)
-	e.DELETE("/student/:id", controller.DeleteStudent)
+	e.POST("/students", controller.AddStudents)
+	e.GET("/students", controller.GetStudent)
+	e.GET("/students/:id", controller.GetDetailStudent)
+	e.DELETE("/students/:id", controller.DeleteStudent)
 
 	e.POST("/login", controller.Login)
 	return e

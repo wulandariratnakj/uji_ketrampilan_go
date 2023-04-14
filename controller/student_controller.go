@@ -76,7 +76,7 @@ func GetDetailStudent(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, model.Response{
-		Message: "get data student with ID %d success", Data: student,
+		Message: "get data student success", Data: student,
 	})
 }
 
